@@ -35,4 +35,7 @@ public:
   void parseParameterString(char *data); ///< parse the numeric literal part of a set command
   void setValue(int newValue);  ///< set the value and rpint some debug info
   void dumpParameterInfo(Stream *out);  ///< give human&machine readably status info
+#ifdef ARDUPAR_USE_OSC
+  void parseOscMessage(OSCMessage& message); ///< digest incoming message, similar to parseParameterString
+#endif
 };

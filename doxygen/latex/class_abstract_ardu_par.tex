@@ -1,0 +1,50 @@
+\hypertarget{class_abstract_ardu_par}{}\doxysection{Abstract\+Ardu\+Par Class Reference}
+\label{class_abstract_ardu_par}\index{AbstractArduPar@{AbstractArduPar}}
+
+
+A common interface for all kinds of parameter settings.  
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Ardu\+Par.\+h$>$}
+
+Inheritance diagram for Abstract\+Ardu\+Par\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_abstract_ardu_par}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_abstract_ardu_par_aacdcdcac4a7fadf785576a4f32871997}\label{class_abstract_ardu_par_aacdcdcac4a7fadf785576a4f32871997}} 
+virtual void \mbox{\hyperlink{class_abstract_ardu_par_aacdcdcac4a7fadf785576a4f32871997}{parse\+Serial\+Data}} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em digest incoming serial data that potentially contains a \char`\"{}set\char`\"{} command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_abstract_ardu_par_afe9f2cd41979498fb139c210e2f27232}\label{class_abstract_ardu_par_afe9f2cd41979498fb139c210e2f27232}} 
+virtual void \mbox{\hyperlink{class_abstract_ardu_par_afe9f2cd41979498fb139c210e2f27232}{parse\+Parameter\+String}} (char $\ast$data)=0
+\begin{DoxyCompactList}\small\item\em derived classed implement parsing and setting parameters from a string here \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_abstract_ardu_par_a0cdb0e2a3a7e10b9d2fc208aac874792}\label{class_abstract_ardu_par_a0cdb0e2a3a7e10b9d2fc208aac874792}} 
+virtual void \mbox{\hyperlink{class_abstract_ardu_par_a0cdb0e2a3a7e10b9d2fc208aac874792}{dump\+Parameter\+Info}} (Stream $\ast$out)=0
+\begin{DoxyCompactList}\small\item\em derived classed can give some information about semselves this way. preferably in a machine-\/readable way. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_abstract_ardu_par_a1dd8e9e93a22d94aef04c827626c23e3}\label{class_abstract_ardu_par_a1dd8e9e93a22d94aef04c827626c23e3}} 
+const ARDUPAR\+\_\+\+CONST\+\_\+\+CHAR $\ast$ \mbox{\hyperlink{class_abstract_ardu_par_a1dd8e9e93a22d94aef04c827626c23e3}{cmd\+String}}
+\begin{DoxyCompactList}\small\item\em serial input is parsed for this command string, anything that follows is interpreted as parameter data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_abstract_ardu_par_aaccd04f8d535e5609d946feafc33325a}\label{class_abstract_ardu_par_aaccd04f8d535e5609d946feafc33325a}} 
+size\+\_\+t \mbox{\hyperlink{class_abstract_ardu_par_aaccd04f8d535e5609d946feafc33325a}{cmd\+String\+Length}}
+\begin{DoxyCompactList}\small\item\em used for comparisons \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_abstract_ardu_par_a78a1df8a80a0cd5cc5866db4db4da107}\label{class_abstract_ardu_par_a78a1df8a80a0cd5cc5866db4db4da107}} 
+bool \mbox{\hyperlink{class_abstract_ardu_par_a78a1df8a80a0cd5cc5866db4db4da107}{value\+Received}} = false
+\begin{DoxyCompactList}\small\item\em indicates that a new value was received either from a Stream or by OSC. Set to false to be notified again. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A common interface for all kinds of parameter settings. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Abstract\+Ardu\+Par.\+h\item 
+Abstract\+Ardu\+Par.\+cpp\end{DoxyCompactItemize}

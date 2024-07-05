@@ -4,9 +4,9 @@ void IntArduPar::setup(
     const ARDUPAR_CONST_CHAR *cmdString,
     int minValue,
     int maxValue,
-    boolean isPersistent = true, ///< should the parameter value be initialized from eeprom on startup?
-    int *valuePointer = 0,       ///< the setting can modify an arbitrary location im memory if you give it here.
-    int fixedEEPROMAdress = -1   ///< if you want a specific fixed adress, specify it here
+    boolean isPersistent , ///< should the parameter value be initialized from eeprom on startup?
+    int *valuePointer ,       ///< the setting can modify an arbitrary location im memory if you give it here.
+    int fixedEEPROMAdress    ///< if you want a specific fixed adress, specify it here
 )
 {
     this->cmdString = cmdString;
@@ -81,3 +81,21 @@ void IntArduPar::dumpParameterInfo(Stream *out)
     out->print(maxValue);
     out->print(F("\n"));
 }
+#ifdef ARDUPAR_USE_OSC
+void IntArduPar::parseOscMessage(OSCMessage& message){
+    if(!isOscMessageForMe(message))return;
+    float newValue;
+    if(message.getType(0)=='i'){
+      newValue =  (float)message.getInt(0);
+    }
+    else{
+      if(message.getType(0)=='f'){ 
+        newValue = message.getFloat(0);
+      }    
+      else{
+        return;
+      }
+    }
+    setValue(newValue);
+  };
+#endif

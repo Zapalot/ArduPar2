@@ -3,7 +3,9 @@
 #include "ArduParHelpers.h"
 #include "ArduParCollection.h"
 #include "EepromWrapper.h"
-
+#ifdef ARDUPAR_USE_OSC
+#include <OSCMessage.h>
+#endif
 ////////////////////
 /// a setting for integer values with optional eeprom persistency
 class AbstractArduPar; //prototype
@@ -35,4 +37,7 @@ public:
   void parseParameterString(char *data); ///< parse the numeric literal part of a set command
   void setValue(float newValue);  ///< set the value and rpint some debug info
   void dumpParameterInfo(Stream *out);  ///< give human&machine readably status info
+#ifdef ARDUPAR_USE_OSC
+  void parseOscMessage(OSCMessage& message); ///< digest incoming message, similar to parseParameterString
+#endif
 };

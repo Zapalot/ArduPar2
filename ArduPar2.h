@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Arduino.h"
+// uncomment to enable OSC support
 
+#include "Arduino.h"
 
 #include "ArduParHelpers.h"
 #include "EepromWrapper.h"

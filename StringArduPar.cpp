@@ -5,8 +5,8 @@ void StringArduPar::setup(
       const ARDUPAR_CONST_CHAR *cmdString, ///< Osc Adress of the setting
       char *valuePointer,                   ///< points to the buffer where incoming strings will be written
       int maxLength,                        ///< maximum number of chars the buffer can hold
-      boolean isPersistent = true,          ///< should the parameter value be initialized from eeprom on startup?
-      int fixedEEPROMAdress = -1            ///< if you want a specific fixed adress, specify it here
+      boolean isPersistent,          ///< should the parameter value be initialized from eeprom on startup?
+      int fixedEEPROMAdress            ///< if you want a specific fixed adress, specify it here
   )
   {
 

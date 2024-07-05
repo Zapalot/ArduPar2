@@ -1,0 +1,74 @@
+\hypertarget{class_callback_ardu_par}{}\doxysection{Callback\+Ardu\+Par Class Reference}
+\label{class_callback_ardu_par}\index{CallbackArduPar@{CallbackArduPar}}
+
+
+a setting for integer values with optional eeprom persistency  
+
+
+
+
+{\ttfamily \#include $<$Callback\+Ardu\+Par.\+h$>$}
+
+Inheritance diagram for Callback\+Ardu\+Par\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_callback_ardu_par}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_callback_ardu_par_ab57f5f7ec0cfa50b6ff9438b26a9a2f3}{setup}} (const ARDUPAR\+\_\+\+CONST\+\_\+\+CHAR $\ast$\mbox{\hyperlink{class_abstract_ardu_par_a1dd8e9e93a22d94aef04c827626c23e3}{cmd\+String}}, void($\ast$\mbox{\hyperlink{class_callback_ardu_par_a872437a5831211c96f9d7e275ecf8594}{callback\+Function}})(void))
+\begin{DoxyCompactList}\small\item\em set up the setting. has to be called to make it functional \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_callback_ardu_par_adc33eef703976dc5fdb3a507f5e26372}{parse\+Parameter\+String}} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em parse the numeric literal part of a set command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_callback_ardu_par_a0bfd06389a349bdaee1060b63226d1b4}\label{class_callback_ardu_par_a0bfd06389a349bdaee1060b63226d1b4}} 
+void \mbox{\hyperlink{class_callback_ardu_par_a0bfd06389a349bdaee1060b63226d1b4}{dump\+Parameter\+Info}} (Stream $\ast$out)
+\begin{DoxyCompactList}\small\item\em give human\&machine readably status info \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_callback_ardu_par_a872437a5831211c96f9d7e275ecf8594}\label{class_callback_ardu_par_a872437a5831211c96f9d7e275ecf8594}} 
+void($\ast$ \mbox{\hyperlink{class_callback_ardu_par_a872437a5831211c96f9d7e275ecf8594}{callback\+Function}} )(void)
+\begin{DoxyCompactList}\small\item\em points to the function to be called \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+a setting for integer values with optional eeprom persistency 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_callback_ardu_par_adc33eef703976dc5fdb3a507f5e26372}\label{class_callback_ardu_par_adc33eef703976dc5fdb3a507f5e26372}} 
+\index{CallbackArduPar@{CallbackArduPar}!parseParameterString@{parseParameterString}}
+\index{parseParameterString@{parseParameterString}!CallbackArduPar@{CallbackArduPar}}
+\doxysubsubsection{\texorpdfstring{parseParameterString()}{parseParameterString()}}
+{\footnotesize\ttfamily void Callback\+Ardu\+Par\+::parse\+Parameter\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+parse the numeric literal part of a set command 
+
+set the attached integer parameter from a string that was received 
+
+Implements \mbox{\hyperlink{class_abstract_ardu_par_afe9f2cd41979498fb139c210e2f27232}{Abstract\+Ardu\+Par}}.
+
+\mbox{\Hypertarget{class_callback_ardu_par_ab57f5f7ec0cfa50b6ff9438b26a9a2f3}\label{class_callback_ardu_par_ab57f5f7ec0cfa50b6ff9438b26a9a2f3}} 
+\index{CallbackArduPar@{CallbackArduPar}!setup@{setup}}
+\index{setup@{setup}!CallbackArduPar@{CallbackArduPar}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Callback\+Ardu\+Par\+::setup (\begin{DoxyParamCaption}\item[{const ARDUPAR\+\_\+\+CONST\+\_\+\+CHAR $\ast$}]{cmd\+String,  }\item[{void($\ast$)(void)}]{callback\+Function }\end{DoxyParamCaption})}
+
+
+
+set up the setting. has to be called to make it functional 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback\+Function} & A pointer to the function that will be triggered. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Callback\+Ardu\+Par.\+h\item 
+Callback\+Ardu\+Par.\+cpp\end{DoxyCompactItemize}

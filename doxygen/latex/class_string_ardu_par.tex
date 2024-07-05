@@ -1,0 +1,78 @@
+\hypertarget{class_string_ardu_par}{}\doxysection{String\+Ardu\+Par Class Reference}
+\label{class_string_ardu_par}\index{StringArduPar@{StringArduPar}}
+
+
+a setting for string values with optional eeprom persistency  
+
+
+
+
+{\ttfamily \#include $<$String\+Ardu\+Par.\+h$>$}
+
+Inheritance diagram for String\+Ardu\+Par\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_string_ardu_par}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_string_ardu_par_ac8a09d108d4038cb7c02b7574ecd305b}{setup}} (const ARDUPAR\+\_\+\+CONST\+\_\+\+CHAR $\ast$\mbox{\hyperlink{class_abstract_ardu_par_a1dd8e9e93a22d94aef04c827626c23e3}{cmd\+String}}, char $\ast$\mbox{\hyperlink{class_string_ardu_par_abd30977fb6729f33cb2719da1deb49b2}{value\+Pointer}}, int \mbox{\hyperlink{class_string_ardu_par_a767d7f9569e264bc131f047e2d61c7e3}{max\+Length}}, boolean is\+Persistent=true, int fixed\+EEPROMAdress=-\/1)
+\begin{DoxyCompactList}\small\item\em Initialize the setting. Has to be called for the setting to become usable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_string_ardu_par_a08457a0a92d5d35277bdfda90a49ab4d}\label{class_string_ardu_par_a08457a0a92d5d35277bdfda90a49ab4d}} 
+virtual void \mbox{\hyperlink{class_string_ardu_par_a08457a0a92d5d35277bdfda90a49ab4d}{parse\+Parameter\+String}} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em set the string parameter from the remaining data. one leading character after the command name is skipped \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_string_ardu_par_ae53606bc617a8490fb226b1177cd3772}\label{class_string_ardu_par_ae53606bc617a8490fb226b1177cd3772}} 
+void {\bfseries save\+Value} ()
+\item 
+\mbox{\Hypertarget{class_string_ardu_par_aaa0e2ec45802bbc0af57e6a8d42e29b7}\label{class_string_ardu_par_aaa0e2ec45802bbc0af57e6a8d42e29b7}} 
+virtual void \mbox{\hyperlink{class_string_ardu_par_aaa0e2ec45802bbc0af57e6a8d42e29b7}{dump\+Parameter\+Info}} (Stream $\ast$out)
+\begin{DoxyCompactList}\small\item\em give human\&machine readably status info \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_string_ardu_par_abd30977fb6729f33cb2719da1deb49b2}\label{class_string_ardu_par_abd30977fb6729f33cb2719da1deb49b2}} 
+char $\ast$ \mbox{\hyperlink{class_string_ardu_par_abd30977fb6729f33cb2719da1deb49b2}{value\+Pointer}}
+\begin{DoxyCompactList}\small\item\em points to the parameter value to be set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_string_ardu_par_ab58cfb94b515095345474b1cc81e38b2}\label{class_string_ardu_par_ab58cfb94b515095345474b1cc81e38b2}} 
+int \mbox{\hyperlink{class_string_ardu_par_ab58cfb94b515095345474b1cc81e38b2}{eeprom\+Adress}}
+\begin{DoxyCompactList}\small\item\em an adress in eeprom memory for permanent storage of the parameter value. When $<$0 no storage will happen \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_string_ardu_par_a767d7f9569e264bc131f047e2d61c7e3}\label{class_string_ardu_par_a767d7f9569e264bc131f047e2d61c7e3}} 
+int \mbox{\hyperlink{class_string_ardu_par_a767d7f9569e264bc131f047e2d61c7e3}{max\+Length}}
+\begin{DoxyCompactList}\small\item\em maximum Length the buffers can hold \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+a setting for string values with optional eeprom persistency 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_string_ardu_par_ac8a09d108d4038cb7c02b7574ecd305b}\label{class_string_ardu_par_ac8a09d108d4038cb7c02b7574ecd305b}} 
+\index{StringArduPar@{StringArduPar}!setup@{setup}}
+\index{setup@{setup}!StringArduPar@{StringArduPar}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void String\+Ardu\+Par\+::setup (\begin{DoxyParamCaption}\item[{const ARDUPAR\+\_\+\+CONST\+\_\+\+CHAR $\ast$}]{cmd\+String,  }\item[{char $\ast$}]{value\+Pointer,  }\item[{int}]{max\+Length,  }\item[{boolean}]{is\+Persistent = {\ttfamily true},  }\item[{int}]{fixed\+EEPROMAdress = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Initialize the setting. Has to be called for the setting to become usable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd\+String} & Osc Adress of the setting \\
+\hline
+{\em value\+Pointer} & points to the buffer where incoming strings will be written \\
+\hline
+{\em max\+Length} & maximum number of chars the buffer can hold \\
+\hline
+{\em is\+Persistent} & should the parameter value be initialized from eeprom on startup? \\
+\hline
+{\em fixed\+EEPROMAdress} & if you want a specific fixed adress, specify it here \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+String\+Ardu\+Par.\+h\item 
+String\+Ardu\+Par.\+cpp\end{DoxyCompactItemize}

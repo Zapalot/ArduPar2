@@ -1,0 +1,84 @@
+\hypertarget{class_float_ardu_par}{}\doxysection{Float\+Ardu\+Par Class Reference}
+\label{class_float_ardu_par}\index{FloatArduPar@{FloatArduPar}}
+Inheritance diagram for Float\+Ardu\+Par\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_float_ardu_par}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_float_ardu_par_afa97f99425ef04e80b9e930796ae942d}\label{class_float_ardu_par_afa97f99425ef04e80b9e930796ae942d}} 
+\mbox{\hyperlink{class_float_ardu_par_afa97f99425ef04e80b9e930796ae942d}{Float\+Ardu\+Par}} ()
+\begin{DoxyCompactList}\small\item\em simplest possible constructor, will use own value and no persistency \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_float_ardu_par_ac6c111159a0bb32d45ee3c066179bf18}{setup}} (const ARDUPAR\+\_\+\+CONST\+\_\+\+CHAR $\ast$\mbox{\hyperlink{class_abstract_ardu_par_a1dd8e9e93a22d94aef04c827626c23e3}{cmd\+String}}, float \mbox{\hyperlink{class_float_ardu_par_aedcbe7f5ab8f7ac0da7c4b7c0cb76ab3}{min\+Value}}, float \mbox{\hyperlink{class_float_ardu_par_a8a49671d1ae8c7c71cb634952f245b50}{max\+Value}}, boolean is\+Persistent=true, float $\ast$\mbox{\hyperlink{class_float_ardu_par_a6f5be032923bcd2c7db0e7713af25c70}{value\+Pointer}}=0, int fixed\+EEPROMAdress=-\/1)
+\begin{DoxyCompactList}\small\item\em set up the setting. has to be called to make it functional \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_float_ardu_par_aec7c8630851636e234a1d1293056d96d}{parse\+Parameter\+String}} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em parse the numeric literal part of a set command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_float_ardu_par_a49871541187c46cef2d942b5611957cd}\label{class_float_ardu_par_a49871541187c46cef2d942b5611957cd}} 
+void \mbox{\hyperlink{class_float_ardu_par_a49871541187c46cef2d942b5611957cd}{set\+Value}} (float new\+Value)
+\begin{DoxyCompactList}\small\item\em set the value and rpint some debug info \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_float_ardu_par_a8ae4ee3e547d7630fd654435cfc7cd49}\label{class_float_ardu_par_a8ae4ee3e547d7630fd654435cfc7cd49}} 
+void \mbox{\hyperlink{class_float_ardu_par_a8ae4ee3e547d7630fd654435cfc7cd49}{dump\+Parameter\+Info}} (Stream $\ast$out)
+\begin{DoxyCompactList}\small\item\em give human\&machine readably status info \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_float_ardu_par_a5b2baaa6194a79bb8f250384b1185ac1}\label{class_float_ardu_par_a5b2baaa6194a79bb8f250384b1185ac1}} 
+float {\bfseries value}
+\item 
+\mbox{\Hypertarget{class_float_ardu_par_a6f5be032923bcd2c7db0e7713af25c70}\label{class_float_ardu_par_a6f5be032923bcd2c7db0e7713af25c70}} 
+float $\ast$ \mbox{\hyperlink{class_float_ardu_par_a6f5be032923bcd2c7db0e7713af25c70}{value\+Pointer}}
+\begin{DoxyCompactList}\small\item\em points to the parameter value to be set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_float_ardu_par_a39981eeb89bfb72a193d3c7843df8035}\label{class_float_ardu_par_a39981eeb89bfb72a193d3c7843df8035}} 
+int \mbox{\hyperlink{class_float_ardu_par_a39981eeb89bfb72a193d3c7843df8035}{eeprom\+Adress}}
+\begin{DoxyCompactList}\small\item\em an adress in eeprom memory for permanent storage of the parameter value. When $<$0 no storage will happen \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_float_ardu_par_aedcbe7f5ab8f7ac0da7c4b7c0cb76ab3}\label{class_float_ardu_par_aedcbe7f5ab8f7ac0da7c4b7c0cb76ab3}} 
+float \mbox{\hyperlink{class_float_ardu_par_aedcbe7f5ab8f7ac0da7c4b7c0cb76ab3}{min\+Value}}
+\begin{DoxyCompactList}\small\item\em lower Bound of the Parameter. Received values are constrained to be in the Range of \mbox{[}min\+Value,max\+Value\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_float_ardu_par_a8a49671d1ae8c7c71cb634952f245b50}\label{class_float_ardu_par_a8a49671d1ae8c7c71cb634952f245b50}} 
+float \mbox{\hyperlink{class_float_ardu_par_a8a49671d1ae8c7c71cb634952f245b50}{max\+Value}}
+\begin{DoxyCompactList}\small\item\em upper Bound of the Parameter. Received values are constrained to be in the Range of \mbox{[}min\+Value,max\+Value\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_float_ardu_par_aec7c8630851636e234a1d1293056d96d}\label{class_float_ardu_par_aec7c8630851636e234a1d1293056d96d}} 
+\index{FloatArduPar@{FloatArduPar}!parseParameterString@{parseParameterString}}
+\index{parseParameterString@{parseParameterString}!FloatArduPar@{FloatArduPar}}
+\doxysubsubsection{\texorpdfstring{parseParameterString()}{parseParameterString()}}
+{\footnotesize\ttfamily void Float\+Ardu\+Par\+::parse\+Parameter\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+parse the numeric literal part of a set command 
+
+set the attached integer parameter from a string that was received 
+
+Implements \mbox{\hyperlink{class_abstract_ardu_par_afe9f2cd41979498fb139c210e2f27232}{Abstract\+Ardu\+Par}}.
+
+\mbox{\Hypertarget{class_float_ardu_par_ac6c111159a0bb32d45ee3c066179bf18}\label{class_float_ardu_par_ac6c111159a0bb32d45ee3c066179bf18}} 
+\index{FloatArduPar@{FloatArduPar}!setup@{setup}}
+\index{setup@{setup}!FloatArduPar@{FloatArduPar}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Float\+Ardu\+Par\+::setup (\begin{DoxyParamCaption}\item[{const ARDUPAR\+\_\+\+CONST\+\_\+\+CHAR $\ast$}]{cmd\+String,  }\item[{float}]{min\+Value,  }\item[{float}]{max\+Value,  }\item[{boolean}]{is\+Persistent = {\ttfamily true},  }\item[{float $\ast$}]{value\+Pointer = {\ttfamily 0},  }\item[{int}]{fixed\+EEPROMAdress = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+set up the setting. has to be called to make it functional 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Persistent} & should the parameter value be initialized from eeprom on startup? \\
+\hline
+{\em value\+Pointer} & the setting can modify an arbitrary location im memory if you give it here. \\
+\hline
+{\em fixed\+EEPROMAdress} & if you want a specific fixed adress, specify it here \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Float\+Ardu\+Par.\+h\item 
+Float\+Ardu\+Par.\+cpp\end{DoxyCompactItemize}

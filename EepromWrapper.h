@@ -1,11 +1,9 @@
 #pragma once
 
-#ifdef __AVR__
 
-#define ARDUPAR_CONST_CHAR __FlashStringHelper
-#else
-#define ARDUPAR_CONST_CHAR char
-#endif
+
+
+
 class EepromWrapper{
 	public:
 	static int getAdressFor(int bytes);	///< returns an adress and reserves the requested number of bytes
@@ -14,4 +12,5 @@ class EepromWrapper{
 
 	protected:
 	static int nextFreeAdress;	///< points to the next free byte
+	static bool isInitialized;
 };

@@ -1,14 +1,12 @@
 #include "FloatArduPar.h"
 
-
-
 void FloatArduPar::setup(
     const ARDUPAR_CONST_CHAR *cmdString,
     float minValue,
     float maxValue,
-    boolean isPersistent = true, ///< should the parameter value be initialized from eeprom on startup?
-    float *valuePointer = 0,       ///< the setting can modify an arbitrary location im memory if you give it here.
-    int fixedEEPROMAdress = -1   ///< if you want a specific fixed adress, specify it here
+    boolean isPersistent, ///< should the parameter value be initialized from eeprom on startup?
+    float *valuePointer,  ///< the setting can modify an arbitrary location im memory if you give it here.
+    int fixedEEPROMAdress ///< if you want a specific fixed adress, specify it here
 )
 {
     this->cmdString = cmdString;
@@ -26,13 +24,24 @@ void FloatArduPar::setup(
 
         if (fixedEEPROMAdress == -1)
         {
-            TRACE((F("Getting EEPROM. Adress: ")));
+            TRACE((F("Getting EEPROM. asking for auto address: ")));
             fixedEEPROMAdress = EepromWrapper::getAdressFor(sizeof(float));
         };
         this->eepromAdress = fixedEEPROMAdress;
         TRACE((F("Init from EEPROM. Adress: ")));
         TRACE((int)(eepromAdress));
-        EepromWrapper::read_bytes(valuePointer, eepromAdress, sizeof(float));
+        float tempFloat = 0;
+        EepromWrapper::read_bytes(&tempFloat, eepromAdress, sizeof(float));
+#if defined(__AVR__)
+			bool success=isfinite(tempFloat);
+#else
+			bool success=std::isfinite(tempFloat);
+#endif
+
+        if (success)
+        {
+            *valuePointer = tempFloat;
+        }
         TRACE((F(" value:")));
         TRACELN((*valuePointer));
     }
@@ -45,7 +54,7 @@ void FloatArduPar::setup(
 /// set the attached integer parameter from a string that was received
 void FloatArduPar::parseParameterString(char *data)
 {
-    setValue(atoi(data));
+    setValue(atof(data));
 };
 
 // set the value and rpint some debug info
@@ -83,3 +92,22 @@ void FloatArduPar::dumpParameterInfo(Stream *out)
     out->print(maxValue);
     out->print(F("\n"));
 }
+
+#ifdef ARDUPAR_USE_OSC
+void FloatArduPar::parseOscMessage(OSCMessage& message){
+    if(!isOscMessageForMe(message))return;
+    float newValue;
+    if(message.getType(0)=='i'){
+      newValue =  (float)message.getInt(0);
+    }
+    else{
+      if(message.getType(0)=='f'){ 
+        newValue = message.getFloat(0);
+      }    
+      else{
+        return;
+      }
+    }
+    setValue(newValue);
+  };
+#endif

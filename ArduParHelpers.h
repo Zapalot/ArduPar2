@@ -1,5 +1,12 @@
 #pragma once
-#define DEBUG 1
+
+#define ARDUPAR_CONST_CHAR __FlashStringHelper
+#define ARDUPAR_USE_OSC
+
+
+
+
+#define DEBUG 0
 #define TRACE(x)       \
   do                   \
   {                    \
@@ -18,3 +25,4 @@
 
 // this determines the maximum parameter command length
 #define PAR_SETTINGS_BUFFER_SIZE 32
+

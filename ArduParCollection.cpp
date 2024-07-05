@@ -1,22 +1,22 @@
 #include "ArduParCollection.h"
 #include "AbstractArduPar.h"
-size_t ArduParCollection::numInstancesRegistered=0;
-AbstractArduPar* ArduParCollection::knownInstances[PAR_SETTINGS_MAX_NUMBER];
+size_t ArduParCollection::numInstancesRegistered = 0;
+AbstractArduPar *ArduParCollection::knownInstances[PAR_SETTINGS_MAX_NUMBER];
 
-
-void ArduParCollection::registerInstance(AbstractArduPar* instance){
-    //register instance in the global array
-    if(numInstancesRegistered<PAR_SETTINGS_MAX_NUMBER){
-      knownInstances[numInstancesRegistered]=instance;
-      numInstancesRegistered++;
-    }
-    else{
-      Serial.print(F("Max Parsetting instances exceeded, could not register"));
-      Serial.println(instance->cmdString);
-    }
+void ArduParCollection::registerInstance(AbstractArduPar *instance)
+{
+  // register instance in the global array
+  if (numInstancesRegistered < PAR_SETTINGS_MAX_NUMBER)
+  {
+    knownInstances[numInstancesRegistered] = instance;
+    numInstancesRegistered++;
+  }
+  else
+  {
+    Serial.print(F("Max Parsetting instances exceeded, could not register"));
+    Serial.println(instance->cmdString);
+  }
 }
-
-
 
 /// this function automatically distributes incoming data from a stream to the parameter setting instances
 void ArduParCollection::updateParametersFromStream(Stream *inStream, int timeout)
@@ -72,3 +72,14 @@ void ArduParCollection::dumpParameterInfos()
 {
   dumpParameterInfos(&Serial);
 };
+
+#ifdef ARDUPAR_USE_OSC
+void ArduParCollection::distributeOscMessage(OSCMessage &message)
+{
+  TRACELN(message.getAddress());
+  for (int i = 0; i < numInstancesRegistered; i++)
+  {
+    knownInstances[i]->parseOscMessage(message);
+  }
+}
+#endif

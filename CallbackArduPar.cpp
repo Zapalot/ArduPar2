@@ -27,3 +27,11 @@ void CallbackArduPar::dumpParameterInfo(Stream *out)
     out->print(this->cmdString);
     out->print(F("\n"));
 }
+
+#ifdef ARDUPAR_USE_OSC
+void CallbackArduPar::parseOscMessage(OSCMessage& message){
+
+    if(!isOscMessageForMe(message))return;
+    callbackFunction();
+};
+#endif

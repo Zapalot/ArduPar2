@@ -1,0 +1,84 @@
+\hypertarget{class_int_ardu_par}{}\doxysection{Int\+Ardu\+Par Class Reference}
+\label{class_int_ardu_par}\index{IntArduPar@{IntArduPar}}
+Inheritance diagram for Int\+Ardu\+Par\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_int_ardu_par}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_int_ardu_par_ac27cd460cc76ac692238c14f15e83c8d}\label{class_int_ardu_par_ac27cd460cc76ac692238c14f15e83c8d}} 
+\mbox{\hyperlink{class_int_ardu_par_ac27cd460cc76ac692238c14f15e83c8d}{Int\+Ardu\+Par}} ()
+\begin{DoxyCompactList}\small\item\em simplest possible constructor, will use own value and no persistency \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_int_ardu_par_ae966f47bd5bd586a4a58014441a19e4c}{setup}} (const ARDUPAR\+\_\+\+CONST\+\_\+\+CHAR $\ast$\mbox{\hyperlink{class_abstract_ardu_par_a1dd8e9e93a22d94aef04c827626c23e3}{cmd\+String}}, int \mbox{\hyperlink{class_int_ardu_par_a3663d721e83dfc3bfbf166ad8cffaac6}{min\+Value}}, int \mbox{\hyperlink{class_int_ardu_par_ac17095db2fabe91693f23d3008613dcd}{max\+Value}}, boolean is\+Persistent=true, int $\ast$\mbox{\hyperlink{class_int_ardu_par_ae9b39e3f3a28e2f631fd27f692d40592}{value\+Pointer}}=0, int fixed\+EEPROMAdress=-\/1)
+\begin{DoxyCompactList}\small\item\em set up the setting. has to be called to make it functional \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_int_ardu_par_af9f2cde91166a9e0be9868e41f3442dd}{parse\+Parameter\+String}} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em parse the numeric literal part of a set command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_int_ardu_par_a21e5fa0fb19ccb55cdc3dd04b46c7633}\label{class_int_ardu_par_a21e5fa0fb19ccb55cdc3dd04b46c7633}} 
+void \mbox{\hyperlink{class_int_ardu_par_a21e5fa0fb19ccb55cdc3dd04b46c7633}{set\+Value}} (int new\+Value)
+\begin{DoxyCompactList}\small\item\em set the value and rpint some debug info \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_int_ardu_par_a93c254df72dbef6214a5a5836670aee7}\label{class_int_ardu_par_a93c254df72dbef6214a5a5836670aee7}} 
+void \mbox{\hyperlink{class_int_ardu_par_a93c254df72dbef6214a5a5836670aee7}{dump\+Parameter\+Info}} (Stream $\ast$out)
+\begin{DoxyCompactList}\small\item\em give human\&machine readably status info \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_int_ardu_par_ac03b5ae63689925d2920a75ad30cb337}\label{class_int_ardu_par_ac03b5ae63689925d2920a75ad30cb337}} 
+int {\bfseries value}
+\item 
+\mbox{\Hypertarget{class_int_ardu_par_ae9b39e3f3a28e2f631fd27f692d40592}\label{class_int_ardu_par_ae9b39e3f3a28e2f631fd27f692d40592}} 
+int $\ast$ \mbox{\hyperlink{class_int_ardu_par_ae9b39e3f3a28e2f631fd27f692d40592}{value\+Pointer}}
+\begin{DoxyCompactList}\small\item\em points to the parameter value to be set \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_int_ardu_par_a6ed0a77208cb81150f9b151f7a0b9cd4}\label{class_int_ardu_par_a6ed0a77208cb81150f9b151f7a0b9cd4}} 
+int \mbox{\hyperlink{class_int_ardu_par_a6ed0a77208cb81150f9b151f7a0b9cd4}{eeprom\+Adress}}
+\begin{DoxyCompactList}\small\item\em an adress in eeprom memory for permanent storage of the parameter value. When $<$0 no storage will happen \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_int_ardu_par_a3663d721e83dfc3bfbf166ad8cffaac6}\label{class_int_ardu_par_a3663d721e83dfc3bfbf166ad8cffaac6}} 
+int \mbox{\hyperlink{class_int_ardu_par_a3663d721e83dfc3bfbf166ad8cffaac6}{min\+Value}}
+\begin{DoxyCompactList}\small\item\em lower Bound of the Parameter. Received values are constrained to be in the Range of \mbox{[}min\+Value,max\+Value\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_int_ardu_par_ac17095db2fabe91693f23d3008613dcd}\label{class_int_ardu_par_ac17095db2fabe91693f23d3008613dcd}} 
+int \mbox{\hyperlink{class_int_ardu_par_ac17095db2fabe91693f23d3008613dcd}{max\+Value}}
+\begin{DoxyCompactList}\small\item\em upper Bound of the Parameter. Received values are constrained to be in the Range of \mbox{[}min\+Value,max\+Value\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_int_ardu_par_af9f2cde91166a9e0be9868e41f3442dd}\label{class_int_ardu_par_af9f2cde91166a9e0be9868e41f3442dd}} 
+\index{IntArduPar@{IntArduPar}!parseParameterString@{parseParameterString}}
+\index{parseParameterString@{parseParameterString}!IntArduPar@{IntArduPar}}
+\doxysubsubsection{\texorpdfstring{parseParameterString()}{parseParameterString()}}
+{\footnotesize\ttfamily void Int\+Ardu\+Par\+::parse\+Parameter\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+parse the numeric literal part of a set command 
+
+set the attached integer parameter from a string that was received 
+
+Implements \mbox{\hyperlink{class_abstract_ardu_par_afe9f2cd41979498fb139c210e2f27232}{Abstract\+Ardu\+Par}}.
+
+\mbox{\Hypertarget{class_int_ardu_par_ae966f47bd5bd586a4a58014441a19e4c}\label{class_int_ardu_par_ae966f47bd5bd586a4a58014441a19e4c}} 
+\index{IntArduPar@{IntArduPar}!setup@{setup}}
+\index{setup@{setup}!IntArduPar@{IntArduPar}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void Int\+Ardu\+Par\+::setup (\begin{DoxyParamCaption}\item[{const ARDUPAR\+\_\+\+CONST\+\_\+\+CHAR $\ast$}]{cmd\+String,  }\item[{int}]{min\+Value,  }\item[{int}]{max\+Value,  }\item[{boolean}]{is\+Persistent = {\ttfamily true},  }\item[{int $\ast$}]{value\+Pointer = {\ttfamily 0},  }\item[{int}]{fixed\+EEPROMAdress = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+set up the setting. has to be called to make it functional 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Persistent} & should the parameter value be initialized from eeprom on startup? \\
+\hline
+{\em value\+Pointer} & the setting can modify an arbitrary location im memory if you give it here. \\
+\hline
+{\em fixed\+EEPROMAdress} & if you want a specific fixed adress, specify it here \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Int\+Ardu\+Par.\+h\item 
+Int\+Ardu\+Par.\+cpp\end{DoxyCompactItemize}
